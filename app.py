@@ -14,9 +14,16 @@ st.title("Advertising Sales Prediction")
 
 # Input fields for advertising budgets
 st.header("Input Advertising Budgets")
-tv_budget = st.number_input("TV Budget ($)", min_value=0.0, step=1.0)
-radio_budget = st.number_input("Radio Budget ($)", min_value=0.0, step=1.0)
-newspaper_budget = st.number_input("Newspaper Budget ($)", min_value=0.0, step=1.0)
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    tv_budget = st.number_input("TV Budget ($)", min_value=0.0, step=1.0)
+
+with col2:
+    radio_budget = st.number_input("Radio Budget ($)", min_value=0.0, step=1.0)
+
+with col3:
+    newspaper_budget = st.number_input("Newspaper Budget ($)", min_value=0.0, step=1.0)
 
 # Predict sales
 if st.button("Predict Sales"):
